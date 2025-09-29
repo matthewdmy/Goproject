@@ -32,7 +32,11 @@ func main() {
 	}
 	t := router.Group("/task")
 	{
-		t.POST("/", taskController.CreateTask)
+		t.POST("/tasks", taskController.CreateTask)
+		t.GET("/tasks", taskController.GetUserTasks)
+		t.DELETE("/tasks/:id", taskController.DeleteTask)
+		t.GET("/tasks/search", taskController.SearchTask)
+		t.PUT("/tasks/:id", taskController.UpdateTask)
 	}
 	router.Run(":8080")
 }

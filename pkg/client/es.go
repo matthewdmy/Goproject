@@ -8,7 +8,7 @@ import (
 
 func NewEsClient() (*elastic.Client, error) {
 	client, err := elastic.NewClient(
-		elastic.SetURL("http://0.0.0.0:9200"),
+		elastic.SetURL("http://localhost:9200"),
 		elastic.SetSniff(false),
 	)
 	fmt.Println(err)
